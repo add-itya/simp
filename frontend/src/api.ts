@@ -9,7 +9,7 @@ export interface QuakeSummary {
 
 export async function fetchQuakes(minMag = 2.5): Promise<QuakeSummary[]> {
     try {
-        const url = new URL("/api/quakes/summary", "http://localhost:8000");
+        const url = new URL("/api/quakes/summary", "https://simp-production.up.railway.app");
         url.searchParams.set("min_mag", String(minMag));
         const res = await fetch(url.toString());
         if (!res.ok) {
