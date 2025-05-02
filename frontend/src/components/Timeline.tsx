@@ -4,10 +4,9 @@ import { QuakeSummary } from "../api";
 
 interface Props { 
   data: QuakeSummary[]; 
-  minMag: number;
 }
 
-export default function Timeline({ data, minMag }: Props) {
+export default function Timeline({ data }: Props) {
   const ref = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
@@ -126,7 +125,7 @@ export default function Timeline({ data, minMag }: Props) {
       .attr("font-size", "10px")
       .text("Number of Earthquakes");
 
-  }, [data, minMag]);  // Add minMag to dependencies
+  }, [data]);
 
   return (
     <div className="relative aspect-[6.1/1]">

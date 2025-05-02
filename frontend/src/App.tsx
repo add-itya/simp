@@ -89,7 +89,7 @@ export default function App() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="bg-slate-800/50 rounded-xl p-4 border border-slate-700"
               >
-                <Timeline data={filteredData} minMag={minMag} />
+                <Timeline data={filteredData} />
               </motion.div>
 
               <motion.div 
