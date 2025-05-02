@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import * as d3 from "d3";
 import { QuakeSummary } from "../api";
 import { MapContainer, TileLayer, CircleMarker, Popup, AttributionControl, useMap } from "react-leaflet";
@@ -15,7 +15,7 @@ function LegendControl({ radiusScale, colorScale }: { radiusScale: d3.ScalePower
   useEffect(() => {
     const Legend = L.Control.extend({
       options: { position: "bottomright" },
-      onAdd: function(map: L.Map) {
+      onAdd: function(_map: L.Map) {
         const container = L.DomUtil.create("div", "leaflet-control");
         
         const legendSvg = d3.select(container)
