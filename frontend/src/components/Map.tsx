@@ -114,15 +114,15 @@ function LegendControl({ radiusScale, colorScale }: { radiusScale: d3.ScalePower
 }
 
 export default function Map({ data }: Props) {
-  // Scale for circle radius - adjust domain to match actual data range
+  // Scale for circle radius
   const r = d3.scaleSqrt<number, number>()
-    .domain([2.0, 6.0])  // Shifted down by 2 from previous [4.0, 8.0]
+    .domain([2.0, 6.0])
     .range([3, 15])
     .clamp(true);
 
   // Color scale for depth
   const color = d3.scaleSequential()
-    .domain([700, 0])  // Keep this order for the map circles
+    .domain([700, 0])
     .interpolator(d3.interpolateRgb("#ff6b6b", "#ffd93d"));
 
   // Create wrapped data points that repeat across the map
