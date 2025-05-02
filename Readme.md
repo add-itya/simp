@@ -6,6 +6,15 @@ To run the backend:
 - pip install -r requirements.txt
 - uvicorn main:app --reload
 
+To run unit tests:
+- cd backend
+
+- python -m venv .venv && source .venv/bin/activate (ON MAC)
+- pip install -r requirements.txt
+^ if not already done, otherwise you just need source command
+
+- python -m pytest tests/ -v
+
 
 To run the frontend:
 - cd frontend
